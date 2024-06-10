@@ -39,7 +39,7 @@
     }
   }
   .btn {
-    animation: change-color 2s;
+    animation: change-color 2s forwards;
     @keyframes change-color {
       0% {
         color: white;

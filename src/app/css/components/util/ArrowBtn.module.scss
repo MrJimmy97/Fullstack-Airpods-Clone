@@ -1,0 +1,22 @@
+.btn {
+  border: none;
+  background-color: transparent;
+  padding-left: 2px;
+  cursor: pointer;
+  .content {
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+  .arrow {
+    user-select: none; /* Chrome */
+    -webkit-user-select: none; /* Safari */
+  }
+}
+.blackTheme {
+  color: white;
+}
+.whiteTheme {
+  color: rgb(65, 141, 217);
+}

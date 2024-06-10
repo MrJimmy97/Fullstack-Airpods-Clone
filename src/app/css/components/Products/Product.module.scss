@@ -1,0 +1,20 @@
+.box {
+  width: 96%;
+  height: 600px;
+  margin-top: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  max-width: 1520px;
+  & > img {
+    position: absolute;
+  }
+  @media (min-width: 980px) {
+    height: 680px;
+  }
+}
