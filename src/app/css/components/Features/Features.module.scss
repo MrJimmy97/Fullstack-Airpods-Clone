@@ -1,0 +1,17 @@
+.scrollBar {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.scrollBtn {
+  text-align: center;
+  margin-top: 10px;
+
+  & > button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0;
+    margin: 10px 10px;
+  }
+}

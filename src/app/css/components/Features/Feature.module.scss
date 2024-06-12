@@ -1,0 +1,103 @@
+.card {
+  background-color: white;
+  border-radius: 16px;
+  height: 450px;
+  width: 330px;
+  min-width: 330px;
+  margin-left: 20px;
+  position: relative;
+  @media (min-width: 980px) {
+    height: 484px;
+    min-width: 380px;
+  }
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .flipedContent {
+    padding: 140px 76px 0px 38px;
+    text-align: left;
+    animation: fadein 0.5s forwards;
+
+    h4 {
+      font-size: 24px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .content {
+      font-size: 19px;
+      font-weight: 400;
+      margin-top: 22px;
+      sup {
+        vertical-align: super;
+        font-size: smaller;
+        &:hover {
+          color: rgb(65, 141, 217);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .title {
+    font-size: 22px;
+    margin-top: 44px;
+    padding-left: 20px;
+    padding-right: 60px;
+    font-weight: 600;
+  }
+  .imgContainer {
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadein 0.5s forwards;
+    @media (min-width: 980px) {
+      height: 380px;
+    }
+    & > img {
+      margin: 0 auto;
+    }
+  }
+}
+.flipBtn {
+  position: absolute;
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  left: 80%;
+  top: 85%;
+  cursor: pointer;
+  &:hover {
+    color: rgb(107, 107, 107);
+  }
+  @media (min-width: 980px) {
+    font-size: 40px;
+  }
+}
+.deleteBtn {
+  position: absolute;
+  color: white;
+  background: red;
+  border-radius: 50%;
+  font-size: 18px;
+  left: 80%;
+  top: 5%;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  &:hover {
+    background: rgb(255, 73, 73);
+  }
+  @media (min-width: 980px) {
+    font-size: 22px;
+    top: 5%;
+    width: 40px;
+    height: 40px;
+  }
+}
