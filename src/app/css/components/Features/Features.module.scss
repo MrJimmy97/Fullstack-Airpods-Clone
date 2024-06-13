@@ -2,6 +2,9 @@
   display: flex;
   overflow: hidden;
   scroll-behavior: smooth;
+  width: 100%;
+  max-width: 1580px;
+  margin: 0 auto;
 }
 .scrollBtn {
   text-align: center;
