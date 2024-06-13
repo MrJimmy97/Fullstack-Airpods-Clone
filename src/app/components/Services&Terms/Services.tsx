@@ -1,0 +1,24 @@
+import style from "@/app/css/components/Services&Terms/Services.module.scss";
+import servicesData from "@/app/data/servicesData";
+import ArrowBtn from "../util/ArrowBtn";
+
+const Services: React.FC = () => {
+  return (
+    <section>
+      <div className={style.container}>
+        {servicesData.map(({ img, alt, title, content, button }) => (
+          <div className={style.service}>
+            <img src={img} alt={alt} />
+            <div className={style.title}>{title}</div>
+            <div className={style.content}>{content}</div>
+            <ArrowBtn isBlackTheme={false} className={style.arrowBtn}>
+              {button}
+            </ArrowBtn>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Services;

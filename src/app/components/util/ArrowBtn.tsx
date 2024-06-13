@@ -10,7 +10,7 @@ const ArrowBtn: React.FC<{
   let isBlackTheme = props.isBlackTheme ? style.blackTheme : style.whiteTheme;
   return (
     <span className={`${style.btn} ${props.className ?? ""} ${isBlackTheme}`}>
-      <span>{props.children}</span>
+      <span className={style.content}>{props.children}</span>
       <span className={style.arrow}>{" >"}</span>
     </span>
   );
