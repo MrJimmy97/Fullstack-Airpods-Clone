@@ -1,7 +1,19 @@
+'use client'
 import style from "@/app/css/components/Compares/Spec.module.scss";
+import { useContext } from "react";
+import { ElementContext } from "@/app/store/getTermsYPosition-context";
 
 const Spec: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <div className={style.spec}>{children}</div>;
+  const { element } = useContext(ElementContext);
+
+  const scrollToTerms = () => {
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+  return (
+    <div className={style.spec} onClick={scrollToTerms}>
+      {children}
+    </div>
+  );
 };
 const Null: React.FC = () => {
   return <Spec>&#8212;</Spec>;

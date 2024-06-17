@@ -1,8 +1,30 @@
+"use client";
 import style from "@/app/css/components/Services&Terms/Terms.module.scss";
 
+import { useEffect, useRef, useContext } from "react";
+import { ElementContext } from "@/app/store/getTermsYPosition-context";
+
 const Terms: React.FC = () => {
+  const componentRef = useRef<HTMLDivElement>(null);
+  const { getElement } = useContext(ElementContext);
+  useEffect(() => {
+    if (componentRef.current) {
+      getElement(componentRef.current);
+    }
+    const handleResize = () => {
+      if (componentRef.current) {
+        getElement(componentRef.current);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className={style.container}>
+    <div className={style.container} ref={componentRef}>
       <div>
         * New subscribers only. HK$63/month after trial. Offer available for a
         limited time to new subscribers who connect an eligible device to an
