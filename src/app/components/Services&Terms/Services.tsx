@@ -4,7 +4,7 @@ import ArrowBtn from "../util/ArrowBtn";
 
 const Services: React.FC = () => {
   return (
-    <section>
+    <div>
       <div className={style.container}>
         {servicesData.map(({ img, alt, title, content, button }) => (
           <div className={style.service}>
@@ -17,7 +17,7 @@ const Services: React.FC = () => {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

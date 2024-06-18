@@ -11,16 +11,6 @@ const Terms: React.FC = () => {
     if (componentRef.current) {
       getElement(componentRef.current);
     }
-    const handleResize = () => {
-      if (componentRef.current) {
-        getElement(componentRef.current);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
   }, []);
 
   return (

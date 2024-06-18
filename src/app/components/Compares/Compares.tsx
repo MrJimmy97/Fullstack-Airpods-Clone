@@ -6,7 +6,7 @@ import Compare from "./Compare";
 
 const Compares: React.FC = () => {
   return (
-    <section>
+    <div>
       <Title>
         Which AirPods are
         <br />
@@ -22,7 +22,7 @@ const Compares: React.FC = () => {
           Compare all AirPods models
         </ArrowBtn>
       </div>
-    </section>
+    </div>
   );
 };
 

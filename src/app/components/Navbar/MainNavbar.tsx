@@ -26,8 +26,6 @@ const navBarLink: string[] = [
 
 const MainNavbar: React.FC = () => {
   const [isClicked, setIsClicked] = useState(false);
-
-  console.log(isClicked);
   return (
     <div className={style.navbar} style={{ backgroundColor: "transparent" }}>
       <div className={style.navContent}>
