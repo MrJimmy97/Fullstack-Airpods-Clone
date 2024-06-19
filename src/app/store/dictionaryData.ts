@@ -1,4 +1,10 @@
-const directoryData = [
+export interface dataStructure {
+  title: string;
+  directoryLink: {
+    title: string;
+  }[];
+}
+const dictionaryData: dataStructure[] = [
   {
     title: "Shop and Learn",
     directoryLink: [
@@ -91,4 +97,4 @@ const directoryData = [
   },
 ];
 
-export default directoryData;
+export default dictionaryData;

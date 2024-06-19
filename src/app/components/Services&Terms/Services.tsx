@@ -1,5 +1,5 @@
 import style from "@/app/css/components/Services&Terms/Services.module.scss";
-import servicesData from "@/app/data/servicesData";
+import servicesData from "@/app/store/servicesData";
 import ArrowBtn from "../util/ArrowBtn";
 
 const Services: React.FC = () => {
