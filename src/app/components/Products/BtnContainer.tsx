@@ -1,5 +1,5 @@
-import BuyBtn from "../util/BuyBtn";
-import ArrowBtn from "../util/ArrowBtn";
+import BuyBtn from "../UI/BuyBtn";
+import ArrowBtn from "../UI/ArrowBtn";
 import style from "@/app/css/components/Products/BtnContainer.module.scss";
 
 const BtnContainer: React.FC<{

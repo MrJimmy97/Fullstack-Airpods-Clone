@@ -1,6 +1,6 @@
 "use client";
 
-import style from "@/app/css/components/util/ArrowBtn.module.scss";
+import style from "@/app/css/components/UI/ArrowBtn.module.scss";
 
 const ArrowBtn: React.FC<{
   className?: string;

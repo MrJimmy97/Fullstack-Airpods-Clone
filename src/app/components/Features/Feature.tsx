@@ -1,40 +1,84 @@
 "use client";
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { queryClient } from "@/app/util/http";
 import { motion } from "framer-motion";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { featuresData } from "@/app/database/featuresData";
+import { deleteItem, updateDataFetch } from "@/app/util/http";
 
 import style from "@/app/css/components/Features/Feature.module.scss";
 
-const Feature: React.FC<{
-  image: string;
-  description: string;
-  content: React.ReactNode;
-  title: string;
-  sup?: string;
-}> = (props) => {
+const Feature: React.FC<featuresData> = ({
+  image,
+  description,
+  content,
+  title,
+  sup,
+  className,
+  _id,
+}) => {
   const [isFliped, setIsFliped] = useState<boolean>(false);
+  const { mutate: updateMutate } = useMutation({
+    mutationFn: updateDataFetch,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["features"] });
+    },
+  });
+  const { mutate: deleteMutate } = useMutation({
+    mutationFn: deleteItem,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["features"] });
+    },
+  });
+
+  const handleUpdate = () => {
+    updateMutate({
+      _id,
+      image,
+      description,
+      content,
+      title: "Updated!",
+      sup,
+      className,
+    });
+  };
+  const handleDelete = () => {
+    deleteMutate(_id);
+  };
+
   return (
-    <div className={style.card}>
+    <div className={`${style.card} ${className}`}>
       {isFliped ? (
         <div className={style.flipedContent}>
-          <h4>{props.title}</h4>
+          <h4 style={{ color: title === "Updated!" ? "green" : "black" }}>
+            {title}
+          </h4>
           <p className={style.content}>
-            {props.content}
-            <sup>{props.sup}</sup>
+            {content}
+            <sup>{sup}</sup>
           </p>
         </div>
       ) : (
         <>
           <div className={style.imgContainer}>
-            <img src={props.image} alt={props.description} />
+            <img src={image} alt={description} />
           </div>
-          <div className={style.title}>{props.title}</div>
+          <div
+            style={{ color: title === "Updated!" ? "green" : "black" }}
+            className={style.title}
+          >
+            {title}
+          </div>
         </>
       )}
-      <div className={style.deleteBtn}>
+      <div className={style.deleteBtn} onClick={handleDelete}>
         <FontAwesomeIcon icon={faTrashCan} />
+      </div>
+      <div className={style.updateBtn} onClick={handleUpdate}>
+        <div>&#8679;</div>
       </div>
       <motion.div
         className={style.flipBtn}

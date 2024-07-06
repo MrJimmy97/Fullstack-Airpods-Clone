@@ -1,6 +1,6 @@
 import style from "@/app/css/components/Compares/Compares.module.scss";
-import Title from "../util/Title";
-import ArrowBtn from "../util/ArrowBtn";
+import Title from "../UI/Title";
+import ArrowBtn from "../UI/ArrowBtn";
 import airpodsData from "@/app/store/airpodsData";
 import Compare from "./Compare";
 

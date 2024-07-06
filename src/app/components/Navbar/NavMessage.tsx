@@ -1,6 +1,6 @@
 "use client";
 
-import ArrowBtn from "../util/ArrowBtn";
+import ArrowBtn from "../UI/ArrowBtn";
 import style from "@/app/css/components/Navbar/NavMessage.module.scss";
 
 const NavMessage: React.FC = () => {

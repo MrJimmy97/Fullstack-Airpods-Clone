@@ -1,0 +1,34 @@
+.card {
+  background-color: white;
+  border-radius: 16px;
+  height: 450px;
+  width: 330px;
+  min-width: 330px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 980px) {
+    height: 484px;
+    min-width: 380px;
+    margin-left: max(30px, calc(50% - 775px));
+  }
+  div {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

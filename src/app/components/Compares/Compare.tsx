@@ -1,6 +1,6 @@
 import style from "@/app/css/components/Compares/Compare.module.scss";
-import BuyBtn from "../util/BuyBtn";
-import ArrowBtn from "../util/ArrowBtn";
+import BuyBtn from "../UI/BuyBtn";
+import ArrowBtn from "../UI/ArrowBtn";
 import {
   Airpods_2nd,
   AdaptiveAudio,

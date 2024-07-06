@@ -1,4 +1,4 @@
-import style from "@/app/css/components/util/BuyBtn.module.scss";
+import style from "@/app/css/components/UI/BuyBtn.module.scss";
 
 const BuyBtn: React.FC<{
   large: boolean;
