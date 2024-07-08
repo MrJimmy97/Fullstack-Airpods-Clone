@@ -5,7 +5,11 @@ import { queryClient } from "@/app/util/http";
 import { motion } from "framer-motion";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleXmark, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleXmark,
+  faTrashCan,
+  faArrowUpFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
 import { featuresData } from "@/app/database/featuresData";
 import { deleteItem, updateDataFetch } from "@/app/util/http";
 
@@ -78,7 +82,7 @@ const Feature: React.FC<featuresData> = ({
         <FontAwesomeIcon icon={faTrashCan} />
       </div>
       <div className={style.updateBtn} onClick={handleUpdate}>
-        <div>&#8679;</div>
+        <FontAwesomeIcon icon={faArrowUpFromBracket} />
       </div>
       <motion.div
         className={style.flipBtn}
