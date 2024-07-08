@@ -21,6 +21,7 @@ export async function fetchFeatures() {
 export async function initialDataFetch(data: {
   features: initialFeaturesData[];
 }) {
+  console.log(data.features)
   const response = await fetch("/api/features/initial", {
     method: "POST",
     body: JSON.stringify(data.features),
@@ -80,23 +81,6 @@ export async function deleteItem(id: string) {
 
   if (!response.ok) {
     const error = new Error("Error occurred while deleting the features");
-
-    throw error;
-  }
-  const features = await response.json();
-  return features;
-}
-export async function addErrorFetch(data: initialFeaturesData) {
-  const response = await fetch("/api/features/error32432", {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-Type": "appliction/json",
-    },
-  });
-
-  if (!response.ok) {
-    const error = new Error("Error occurred while fetching the features");
 
     throw error;
   }

@@ -67,7 +67,7 @@ const Features: React.FC = () => {
     if (data && data.features && data.features.length > 0) {
       const numberOfFeatures = data.features.length;
       if (windowWidth < 980) {
-        setMaxScrolledFeatures(numberOfFeatures);
+        setMaxScrolledFeatures(numberOfFeatures - 1);
       } else {
         setMaxScrolledFeatures(numberOfFeatures - 1);
       }
@@ -100,7 +100,7 @@ const Features: React.FC = () => {
       <div className={style.scrollBar} ref={featuresBarRef}>
         {content}
         <FeaturesEditor />
-        <div style={{ minWidth: "750px", color: "transparent" }}></div>
+        <div style={{ minWidth: "1200px", color: "transparent" }}></div>
       </div>
       <div className={style.scrollBtn}>
         <button

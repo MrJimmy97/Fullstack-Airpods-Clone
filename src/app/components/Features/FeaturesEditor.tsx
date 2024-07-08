@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { initialFeatures } from "@/app/database/featuresData";
 import { useMutation } from "@tanstack/react-query";
-import { initialDataFetch, addDataFetch, addErrorFetch } from "@/app/util/http";
+import { initialDataFetch, addDataFetch } from "@/app/util/http";
 
 import { queryClient } from "@/app/util/http";
 
@@ -22,12 +22,6 @@ const FeaturesEditor: React.FC = () => {
       queryClient.invalidateQueries({ queryKey: ["features"] });
     },
   });
-  const { mutate: addError } = useMutation({
-    mutationFn: addErrorFetch,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["features"] });
-    },
-  });
 
   function getRandomInt() {
     return Math.floor(Math.random() * 5);
@@ -39,10 +33,7 @@ const FeaturesEditor: React.FC = () => {
     const newItem = initialFeatures[getRandomInt()];
     addMutate(newItem);
   };
-  const addWrongItem = () => {
-    const newItem = initialFeatures[getRandomInt()];
-    addError(newItem);
-  };
+
   return (
     <div className={style.card}>
       <motion.div onClick={initItems} whileHover={{ scale: 1.2 }}>
@@ -50,9 +41,6 @@ const FeaturesEditor: React.FC = () => {
       </motion.div>
       <motion.div onClick={addItem} whileHover={{ scale: 1.2 }}>
         Add Items
-      </motion.div>
-      <motion.div onClick={addWrongItem} whileHover={{ scale: 1.2 }}>
-        Add Error
       </motion.div>
     </div>
   );
