@@ -132,7 +132,7 @@ const Airpods_pro: React.FC = () => {
     <Spec>
       <img
         className={style.case}
-        src="./compares/AirPodspro_specCharging.png"
+        src="./compares/AirPodsPro_specCharging.png"
         alt="MagSafe Charging Case "
       />
       <div className={style.content}>
