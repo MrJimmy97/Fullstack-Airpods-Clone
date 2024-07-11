@@ -1,19 +1,18 @@
-'use client'
+"use client";
 import style from "@/app/css/components/Compares/Spec.module.scss";
 import { useContext } from "react";
 import { ElementContext } from "@/app/store/getTermsYPosition-context";
 
 const Spec: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return <div className={style.spec}>{children}</div>;
+};
+const Sup: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { element } = useContext(ElementContext);
 
   const scrollToTerms = () => {
     element?.scrollIntoView({ behavior: "smooth" });
   };
-  return (
-    <div className={style.spec} onClick={scrollToTerms}>
-      {children}
-    </div>
-  );
+  return <sup onClick={scrollToTerms}>{children}</sup>;
 };
 const Null: React.FC = () => {
   return <Spec>&#8212;</Spec>;
@@ -27,7 +26,7 @@ const AdaptiveAudio: React.FC = () => {
         alt="adaptive audio"
       />
       <div className={style.content}>
-        Adaptive Audio<sup>◊</sup>
+        Adaptive Audio<Sup>◊</Sup>
       </div>
     </Spec>
   );
@@ -54,7 +53,7 @@ const Conversation: React.FC = () => {
         alt="Conversation Awareness"
       />
       <div className={style.content}>
-        Conversation Awareness<sup>◊</sup>
+        Conversation Awareness<Sup>◊</Sup>
       </div>
     </Spec>
   );
@@ -68,7 +67,7 @@ const SpatialAudio: React.FC = () => {
         alt="Spatial Audio"
       />
       <div className={style.content}>
-        Personalized Spatial Audio with dynamic head tracking<sup>◊◊</sup>
+        Personalized Spatial Audio with dynamic head tracking<Sup>◊◊</Sup>
       </div>
     </Spec>
   );
@@ -82,7 +81,7 @@ const Dust: React.FC = () => {
         alt="water resistant"
       />
       <div className={style.content}>
-        Dust, sweat, and water resistant<sup>Δ</sup>
+        Dust, sweat, and water resistant<Sup>Δ</Sup>
       </div>
     </Spec>
   );
@@ -96,7 +95,7 @@ const Sweat: React.FC = () => {
         alt="water resistant"
       />
       <div className={style.content}>
-        Sweat and water resistant<sup>◊◊◊</sup>
+        Sweat and water resistant<Sup>◊◊◊</Sup>
       </div>
     </Spec>
   );
@@ -122,7 +121,7 @@ const Airpods_3rd: React.FC = () => {
         alt="Lightning Charging Case or MagSafe Charging Case"
       />
       <div className={style.content}>
-        Lightning Charging Case or MagSafe Charging Case<sup>ΔΔ</sup>
+        Lightning Charging Case or MagSafe Charging Case<Sup>ΔΔ</Sup>
       </div>
     </Spec>
   );
@@ -136,7 +135,7 @@ const Airpods_pro: React.FC = () => {
         alt="MagSafe Charging Case "
       />
       <div className={style.content}>
-        MagSafe Charging Case (USB‑C) with speaker and lanyard loop<sup>ΔΔ</sup>
+        MagSafe Charging Case (USB‑C) with speaker and lanyard loop<Sup>ΔΔ</Sup>
       </div>
     </Spec>
   );
@@ -158,7 +157,7 @@ const Hours: React.FC<{ time: number }> = ({ time }) => {
     <Spec>
       <div className={style.time}>{time} hrs</div>
       <div className={style.content}>
-        Up to {time} hours of listening time with a single charge<sup>ΔΔΔ</sup>
+        Up to {time} hours of listening time with a single charge<Sup>ΔΔΔ</Sup>
       </div>
     </Spec>
   );

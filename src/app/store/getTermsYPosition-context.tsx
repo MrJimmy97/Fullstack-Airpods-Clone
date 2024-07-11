@@ -1,5 +1,5 @@
 "use client";
-import { useState, createContext, RefObject } from "react";
+import { useState, createContext } from "react";
 
 interface ContextValue {
   element: null | HTMLDivElement;

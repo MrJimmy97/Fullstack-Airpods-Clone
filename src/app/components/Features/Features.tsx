@@ -1,5 +1,5 @@
 "use client";
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { useState, useRef, useEffect } from "react";
 import { fetchFeatures } from "@/app/util/http";
 import { featuresData } from "@/app/database/featuresData";
@@ -66,11 +66,8 @@ const Features: React.FC = () => {
   useEffect(() => {
     if (data && data.features && data.features.length > 0) {
       const numberOfFeatures = data.features.length;
-      if (windowWidth < 980) {
-        setMaxScrolledFeatures(numberOfFeatures - 1);
-      } else {
-        setMaxScrolledFeatures(numberOfFeatures - 1);
-      }
+
+      setMaxScrolledFeatures(numberOfFeatures - 1);
 
       if (currentIndex > maxScrolledFeatures) {
         setCurrentIndex(maxScrolledFeatures);
