@@ -25,7 +25,14 @@ const navBarLink: string[] = [
 ];
 
 const MainNavbar: React.FC = () => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState<boolean>(false);
+  const menuClickHandler = () => {
+    setIsClicked((prev) => {
+      if (prev) document.body.style.overflow = "scroll";
+      else document.body.style.overflow = "hidden";
+      return !prev;
+    });
+  };
   return (
     <div className={style.navbar} style={{ backgroundColor: "transparent" }}>
       <div className={style.navContent}>
@@ -50,9 +57,7 @@ const MainNavbar: React.FC = () => {
         <div
           className={style.hamburger}
           style={{ marginLeft: isClicked ? "auto" : "0" }}
-          onClick={() => {
-            setIsClicked((prev) => !prev);
-          }}
+          onClick={menuClickHandler}
         >
           <motion.div
             animate={{ rotate: isClicked ? 45 : 0, y: isClicked ? 5 : 0 }}

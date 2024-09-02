@@ -21,7 +21,6 @@ export async function fetchFeatures() {
 export async function initialDataFetch(data: {
   features: initialFeaturesData[];
 }) {
-  console.log(data.features)
   const response = await fetch("/api/features/initial", {
     method: "POST",
     body: JSON.stringify(data.features),
