@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import style from "@/app/css/components/Navbar/MainNavbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -67,23 +67,28 @@ const MainNavbar: React.FC = () => {
           ></motion.div>
         </div>
       </div>
-      <motion.div
-        className={style.navMenu}
-        animate={{
-          height: isClicked ? "calc(100% - 48px)" : 0,
-          opacity: isClicked ? 1 : 0,
-        }}
-        initial={{ height: 0, opacity: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className={style.navLinks}>
-          {navBarLink.map((data, i) => (
-            <div key={i} className={style.navLink}>
-              {data}
+      <AnimatePresence>
+        {isClicked && (
+          <motion.div
+            className={style.navMenu}
+            animate={{
+              height: "calc(100% - 48px)",
+              opacity: 1,
+            }}
+            exit={{ height: 0, opacity: 0 }}
+            initial={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className={style.navLinks}>
+              {navBarLink.map((data, i) => (
+                <div key={i} className={style.navLink}>
+                  {data}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
