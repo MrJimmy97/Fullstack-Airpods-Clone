@@ -1,6 +1,6 @@
 ## Full Stack Apple Website Clone (AirPods)
 
-This project was constructed by Next.js which related to typescript, MongoDB and Nextjs. It was cloned from https://www.apple.com/hk/en/airpods/. There are two supported ranges of width, which are 740px to 980px and 981px to larger size. The project of images, icons and video came from the original website and FontAwesome. The live demo could be found at https://fullstack-airpods-clone.vercel.app/
+This project was constructed by Next.js, typescript and MongoDB. It was cloned from https://www.apple.com/hk/en/airpods/. There are two supported ranges of width, which are 740px to 980px and 981px to larger size. The project of images, icons and video came from the original website and FontAwesome. The live demo could be found at https://fullstack-airpods-clone.vercel.app/
 
 ## Getting Started
 
